@@ -11,12 +11,12 @@ The script defines these key variables:
 - **Backend Service**
   - App Name: `backend`
   - Port: `8080`
-  - Domain: `backend.homeslygroup.com`
+  - Domain: `backend.yourdomain.com`
 
 - **Webhook Service**
   - App Name: `webhook-service`
   - Port: `8081`
-  - Domain: `cloudbed.homeslygroup.com`
+  - Domain: `webhook.yourdomain.com`
 
 ---
 
@@ -81,7 +81,7 @@ Creates `/etc/nginx/sites-available/backend`:
 ```nginx
 server {
     listen 80;
-    server_name backend.homeslygroup.com;
+    server_name backend.yourdomain.com;
 
     location / {
         proxy_pass http://localhost:8080/;
@@ -105,7 +105,7 @@ Creates `/etc/nginx/sites-available/webhook-service`:
 ```nginx
 server {
     listen 80;
-    server_name cloudbed.homeslygroup.com;
+    server_name webhook.yourdomain.com;
 
     location / {
         proxy_pass http://localhost:8081/;
